@@ -1,0 +1,7 @@
+---
+- ad_server:
+    ip: <ip of the linux server>
+    fqdn: fqdn.abc.com
+    user: domainuser
+    pass: 'passwordhere'
+    domain: abc.com

@@ -1,0 +1,17 @@
+---
+- hosts: windowsservers
+  gather_facts: no
+  tasks:
+   - name: Update Windows Severs
+     win_updates:
+         category_names: 
+         - SecurityUpdates
+         - CriticalUpdates
+         - UpdateRollups
+         - DefinitionUpdates
+         - updates
+         - FeaturePacks
+         - Servicepacks
+         - Tools
+         - Application
+         reboot: yes

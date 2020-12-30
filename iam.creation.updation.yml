@@ -1,0 +1,11 @@
+#Install role  - ansible-galaxy collection install community.aws
+---
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Create a new IAM role
+      community.aws.iam_role:
+        name: "{{ roleName }}"
+        assume_role_policy_document: "{{ lookup('file','policy.json') }}"
+        tags:
+          env: dev

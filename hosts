@@ -1,0 +1,19 @@
+[windowsservers]
+10.0.0.71
+10.0.0.72
+
+[linuxservers]
+#10.0.0.70
+ec2-52-66-244-182.ap-south-1.compute.amazonaws.com ansible_connection=ssh ansible_user=ansible ansible_ssh_pass=ansible
+
+# Place windows servers credentials here
+[windowsservers:vars]
+ansible_user=JointStackDev1
+ansible_password=JointStackDev2
+ansible_connection=winrm
+ansible_winrm_server_cert_validation=ignore
+ 
+ # Place Linux servers credentials here
+[linuxservers:vars]
+#ansible_user=JointStackDev1
+#ansible_password=JointStackDev1

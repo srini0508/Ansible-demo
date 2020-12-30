@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    # Create a policy with the name of 'Admin' to the group 'administrators'
+    - name: Assign a policy called Admin to the administrators group
+      community.aws.iam_policy:
+        iam_type: group
+        iam_name: administrators
+        policy_name: Admin
+        state: present
+        policy_json: " {{ lookup( 'file', 'admin_policy.json') }} "

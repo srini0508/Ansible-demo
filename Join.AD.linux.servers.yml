@@ -1,0 +1,6 @@
+---
+- hosts: linuxservers
+  vars_files:
+    - vars/ad_details.yaml
+  roles:
+    - domain_join
